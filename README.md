@@ -58,3 +58,6 @@ Requires the Lean toolchain pinned in `lean-toolchain` (v4.28.0) and Mathlib at 
 ## Related
 
 Part of a family of Lean 4 verification libraries: [crdt-lean](https://github.com/velvetmonkey/crdt-lean) (CRDT convergence), [kuramoto-lean](https://github.com/velvetmonkey/kuramoto-lean) (phase synchrony), [online-learning-lean](https://github.com/velvetmonkey/online-learning-lean) (FTRL regret bounds).
+## Part of the Lean proof corpus
+
+One of a family of small, machine-checked Lean 4 developments. Index: [velvetmonkey/lean](https://github.com/velvetmonkey/lean) ([live index](https://velvetmonkey.github.io/lean)).
