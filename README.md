@@ -1,5 +1,6 @@
 # calibration-lean
 
+[![thread](https://img.shields.io/badge/%F0%9F%A7%B5-how%20it%20works-1DA1F2)](https://x.com/thevelvetmonke)
 [![Lean 4](https://img.shields.io/badge/Lean-4.28.0-blue)](https://lean-lang.org/)
 [![Mathlib](https://img.shields.io/badge/Mathlib-v4.28.0-purple)](https://github.com/leanprover-community/mathlib4)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -9,7 +10,15 @@
 
 The missing martingale-difference rung between Mathlib's Hoeffding lemma and its Azuma-Hoeffding inequality, proved and ready to discharge concentration bounds for bounded online forecasters. **Zero `sorry`. Standard axioms only** (`propext`, `Classical.choice`, `Quot.sound`).
 
-## Why it matters
+## What this is, and why it matters
+
+This library supplies a missing concentration lemma for martingale differences. Its headline result, `hasCondSubgaussianMGF_of_mem_Icc`, proves that an almost-everywhere measurable random variable bounded in `[a,b]` and conditionally centered at zero has the conditional sub-Gaussian moment bound expected by Mathlib's Azuma-Hoeffding theorem.
+
+The result matters because it connects two existing pieces of Mathlib. The proof transfers boundedness and zero conditional mean to almost every conditional law, applies the ordinary Hoeffding bound there, and packages the result in the exact `HasCondSubgaussianMGF` form consumed by Azuma.
+
+The scope is one concentration producer. This repository does not yet prove a forecast-calibration bound, certify an online forecaster, or complete the proposed Brier scoring loop. Those are downstream applications identified in the roadmap, not claims of the present theorem.
+
+## Background and motivation
 
 Mathlib already ships both ends of the concentration story for sub-Gaussian martingales:
 
